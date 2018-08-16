@@ -28,6 +28,7 @@ defmodule ParallelDots do
       please add a configuration for ParallelDots to be able to use this library. 
       Read the documentation about configuration for more details")
 
+  @doc false
   def check_config(list) do
     case Keyword.has_key?(list, :api_key) do
       false -> raise "ParallelDots requires an api key, 
@@ -46,7 +47,8 @@ defmodule ParallelDots do
 
     %{
       "name" => api_root <> "ner",
-      "sentiment" => api_root <> "sentiment"
+      "sentiment" => api_root <> "sentiment",
+      "intent" => api_root <> "intent"
     }
   end
 
@@ -69,10 +71,10 @@ defmodule ParallelDots do
       in case of the HTTPoison failt to execute the request  
       `{:error, reason}`  
     if type = sentiment  
-    in case of successful call    
-    `{:ok, %{"code" => 200, "probabilities" => %{"negative" => 0.134, "neutral" => 0.29, "positive" => 0.576}, "sentiment" => "positive"}}`  
-    in case of the HTTPoison failt to execute the request  
-    `{:error, reason}`   
+      in case of successful call    
+      `{:ok, %{"code" => 200, "probabilities" => %{"negative" => 0.134, "neutral" => 0.29, "positive" => 0.576}, "sentiment" => "positive"}}`  
+      in case of the HTTPoison failt to execute the request  
+      `{:error, reason}`   
   """
   def text_analysis(text, type) do
     api_key = config(:api_key)

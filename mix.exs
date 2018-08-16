@@ -1,7 +1,7 @@
 defmodule ParallelDots.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @name "parallel_dots"
   @maintainers ["Hussein Merhi"]
   @url "https://github.com/Eweev/parallel_dots"
