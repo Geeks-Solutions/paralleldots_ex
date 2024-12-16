@@ -1,10 +1,10 @@
 defmodule ParallelDots.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.2"
   @name "parallel_dots"
   @maintainers ["Hussein Merhi"]
-  @url "https://github.com/Eweev/parallel_dots"
+  @url "https://github.com/Geeks-Solutions/paralleldots_ex"
 
   def project do
     [
